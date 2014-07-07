@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Bootstrap 101 Template</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Bootstrap -->
+<link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap.min.css">
+</head>
+<body>
+  <ul class="nav nav-list">
+    <li class="active"><a href="#">Home</a></li>
+    <li><a href="#">Profile</a></li>
+    <li><a href="#">Messages</a></li>
+    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"> Dropdown <b class="caret">
+      </b></a>
+      <ul class="dropdown-menu">
+        <li><a href="#">Menu 1</a></li>
+        <li><a href="#">Menu 2</a></li>
+        <li class="divider"></li>
+        <li><a href="#">Menu 3</a></li>
+      </ul></li>
+  </ul>
+  <h1>Hello, bootstrap!</h1>
+  <div class="tabbable tabs-below">
+    <!-- Only required for left/right tabs -->
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#tab1" data-toggle="tab">Section 1</a></li>
+      <li><a href="#tab2" data-toggle="tab">Section 2</a></li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active" id="tab1">
+        <p>I'm in Section 1.</p>
+      </div>
+      <div class="tab-pane" id="tab2">
+        <p>Howdy, I'm in Section 2.</p>
+      </div>
+    </div>
+  </div>
+  <h1>Hello, bootstrap!</h1>
+  <div class="navbar">
+    <div class="navbar-inner">
+      <div class="container">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span>
+          <span class="icon-bar"></span> <span class="icon-bar"></span>
+        </a>
+        <!-- Be sure to leave the brand out there if you want it shown -->
+        <a class="brand" href="#">Project name</a>
+        <!-- Everything you want hidden at 940px or less, place within here -->
+        <div class="nav-collapse collapse">
+          <!-- .nav, .navbar-search, .navbar-form, etc -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ul class="breadcrumb">
+    <li><a href="#">Home</a> <span class="divider"></span></li>
+    <li><a href="#">Library</a> <span class="divider"></span></li>
+    <li class="active">Data</li>
+  </ul>
+
+  <div class="pagination">
+    <ul>
+      <li class="disabled"><a href="#">&laquo;</a></li>
+      <li class="active"><a href="#">1</a></li>
+    </ul>
+  </div>
+
+  <div class="alert alert-block">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <h4>Warning!</h4>
+    Best check yo self, you're not...
+  </div>
+
+  <div class="progress">
+    <div class="bar" style="width: 60%;"></div>
+  </div>
+  <div class="progress progress-striped active">
+    <div class="bar" style="width: 40%;"></div>
+  </div>
+  <div class="progress progress-striped">
+    <div class="bar" style="width: 20%;"></div>
+  </div>
+  <div class="progress progress-info">
+    <div class="bar" style="width: 20%"></div>
+  </div>
+  <div class="progress progress-success">
+    <div class="bar" style="width: 40%"></div>
+  </div>
+  <div class="progress progress-warning">
+    <div class="bar" style="width: 60%"></div>
+  </div>
+  <div class="progress progress-danger">
+    <div class="bar" style="width: 80%"></div>
+  </div>
+  <button type="button" data-toggle="modal" data-target="#myModal">Launch modal</button>
+  <script type="text/javascript">
+            $('#myModal').modal(options)
+        </script>
+  <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+  <script src="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
+</body>
+</html>

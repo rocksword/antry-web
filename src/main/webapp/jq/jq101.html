@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Hello World</title>
+<!-- CSS for presentation. -->
+<style>
+h1 {
+	font-size: 14px;
+	color: hotpink;
+}
+
+button {
+	color: red;
+}
+</style>
+</head>
+<body>
+  <h1>Hello World</h1>
+  <button>Click Me!</button>
+  <!-- JavaScript for interactivity. -->
+  <script>
+            window.onload = function() {
+                // Addition vs. Concatenation
+                var foo = 1;
+                var bar = "2";
+                console.log(foo + bar); // 12
+
+                // Coercing a string to act as a number.
+                var foo = 1;
+                var bar = "2";
+                console.log(foo + Number(bar)); // 3
+
+                // Forcing a string to act as a number (using the unary plus operator).
+                console.log(foo + +bar); // 3
+                console.log(33);
+                console.log("33");
+
+                foo = "baz";
+                switch (foo) {
+                case "bar":
+                    console.log("the value was bar -- yay!");
+                    break;
+                case "baz":
+                    console.log("boo baz :(");
+                    break;
+                default:
+                    console.log("everything else is just ok");
+                }
+
+                var stuffToDo = {
+                    "bar" : function() {
+                        console.log("the value was bar -- yay!");
+                    },
+                    "baz" : function() {
+                        console.log("boo baz :(");
+                    },
+                    "default" : function() {
+                        console.log("everything else is just ok");
+                    }
+                };
+                // Check if the property exists in the object.
+                if (stuffToDo[foo]) {
+                    // This code won't run.
+                    stuffToDo[foo]();
+                } else {
+                    // This code will run.
+                    stuffToDo["default"]();
+                }
+
+                // Creating empty arrays and adding values
+                var myArray = [];
+                // Adds "hello" on index 0
+                myArray.push("hello");
+                // Adds "world" on index 1
+                myArray.push("world");
+                // Adds "!" on index 3
+                myArray[3] = "!";
+                console.log(myArray); // [ "hello", "world", undefined, "!" ];
+                console.log(myArray.length); // 4
+
+                var myArray = [ 2, 3, 4 ];
+                var myOtherArray = [ 5, 6, 7 ];
+                var wholeArray = myArray.concat(myOtherArray); // [ 2, 3, 4, 5, 6, 7 ]
+                console.log(wholeArray);
+
+                // Joining elements
+                var myArray = [ "hello", "world", "!" ];
+                // The default separator is a comma.
+                console.log(myArray.join()); // "hello,world,!"
+                // Any string can be used as separator...
+                console.log(myArray.join(" ")); // "hello world !";
+                console.log(myArray.join("!!")); // "hello!!world!!!";
+                // ...including an empty one.
+                console.log(myArray.join("")); // "helloworld!"
+
+                // Pushing and popping
+                var myArray = [];
+                myArray.push(0); // [ 0 ]
+                myArray.push(2); // [ 0 , 2 ]
+                myArray.push(7); // [ 0 , 2 , 7 ]
+                myArray.pop(); // [ 0 , 2 ]
+                console.log(myArray);
+
+                var myArray = [ "hello", "world" ];
+                myArray.reverse(); // [ "world", "hello" ]
+                console.log(myArray);
+
+                // Queue with shift() and push()
+                var myArray = [];
+                myArray.push(0); // [ 0 ]
+                myArray.push(2); // [ 0 , 2 ]
+                myArray.push(7); // [ 0 , 2 , 7 ]
+                myArray.shift(); // [ 2 , 7 ]
+                console.log(myArray);
+
+                // Slicing
+                var myArray = [ 1, 2, 3, 4, 5, 6, 7, 8 ];
+                var newArray = myArray.slice(3);
+                console.log(myArray); // [ 1, 2, 3, 4, 5, 6, 7, 8 ]
+                console.log(newArray); // [ 4, 5, 6, 7, 8 ]
+
+                var myArray = [ 0, 7, 8, 5 ];
+                myArray.splice(1, 2, 1, 2, 3, 4);
+                console.log(myArray); // [ 0, 1, 2, 3, 4, 5 ]
+
+                // Sorting without comparing function.
+                var myArray = [ 3, 4, 6, 1 ];
+                myArray.sort(); // 1, 3, 4, 6
+                console.log(myArray);
+
+                // Sorting with comparing function.
+                function descending(a, b) {
+                    return b - a;
+                }
+                var myArray = [ 3, 4, 6, 1 ];
+                myArray.sort(descending); // [ 6, 4, 3, 1 ]
+                console.log(myArray);
+
+                // Inserts an element at the first position of the array:
+                var myArray = [];
+                myArray.unshift(0); // [ 0 ]
+                myArray.unshift(2); // [ 2 , 0 ]
+                myArray.unshift(7); // [ 7 , 2 , 0 ]
+                console.log(myArray);
+
+                // Native .forEach()
+                function printElement(elem) {
+                    console.log(elem);
+                }
+                function printElementAndIndex(elem, index) {
+                    console.log("Index " + index + ": " + elem);
+                }
+                function negateElement(elem, index, array) {
+                    array[index] = -elem;
+                }
+                myArray = [ 1, 2, 3, 4, 5 ];
+                // Prints all elements to the console
+                myArray.forEach(printElement);
+                // Prints "Index 0: 1", "Index 1: 2", "Index 2: 3", ...
+                myArray.forEach(printElementAndIndex);
+                // myArray is now [ -1, -2, -3, -4, -5 ]
+                myArray.forEach(negateElement);
+                console.log(myArray);
+
+                // Creating an object literal.
+                var myObject = {
+                    sayHello : function() {
+                        console.log("hello");
+                    },
+                    myName : "Rebecca"
+                };
+                myObject.sayHello(); // "hello"
+                console.log(myObject.myName); // "Rebecca"
+
+                var myObject = {
+                    validIdentifier : 123,
+                    "some string" : 456,
+                    99999 : 789
+                };
+                console.log(myObject);
+                console.log(myObject.validIdentifier);
+
+                // A function that returns another function.
+                var greet = function(person, greeting) {
+                    var text = greeting + ", " + person;
+                    return function() {
+                        console.log(text);
+                    };
+                };
+                var greeting = greet("Rebecca", "Hello");
+                greeting(); // "Hello, Rebecca"
+
+                // An immediately-invoked function expression.
+                var innerfoo;
+                (function() {
+                    var innerfoo = "Hello world";
+                    console.log(innerfoo);
+                })();
+                console.log(innerfoo); // undefined!
+
+                // Passing an anonymous function as an argument.
+                var myFn = function(fn) {
+                    var result = fn();
+                    console.log(result);
+                };
+                // Logs "hello world"
+                myFn(function() {
+                    return "hello world";
+                });
+
+                // Testing the type of various variables.
+                var myFunction = function() {
+                    console.log("hello");
+                };
+                var myObject = {
+                    foo : "bar"
+                };
+                var myArray = [ "a", "b", "c" ];
+                var myString = "hello";
+                var myNumber = 3;
+                var myRegExp = /(\w+)\s(\w+)/;
+                console.log(typeof myFunction); // "function"
+                console.log(typeof myObject); // "object"
+                console.log(typeof myArray); // "object" -- Careful!
+                console.log(typeof myString); // "string"
+                console.log(typeof myNumber); // "number"
+                console.log(typeof null); // "object" -- Careful!
+                console.log(typeof undefined); // "undefined"
+                console.log(typeof meh); // "undefined" -- undefined variable.
+                console.log(typeof myRegExp); // "function" or "object" depending on environment.
+                if (myArray.push && myArray.slice && myArray.join) {
+                    // probably an array (this is called "duck typing")
+                }
+                if (Object.prototype.toString.call(myArray) === "[object Array]") {
+                    // Definitely an array!
+                    // This is widely considered as the most robust way
+                    // to determine if a specific value is an Array.
+                }
+
+                // A function invoked using Function.call()
+                myName = "the global object";
+                var myObject = {
+                    sayHello : function() {
+                        console.log("Hi! My name is " + this.myName);
+                    },
+                    myName : "Rebecca"
+                };
+                var secondObject = {
+                    myName : "Colin"
+                };
+                myObject.sayHello(); // "Hi! My name is Rebecca"
+                myObject.sayHello.call(secondObject); // "Hi! My name is Colin"
+
+                // A function created using Function.bind()
+                var sayHello = function() {
+                    console.log("Hi! My name is " + this.myName);
+                };
+                var myObject = {
+                    myName : "Rebecca"
+                };
+                var myObjectHello = sayHello.bind(myObject);
+                sayHello(); // "Hi! My name is the global object"
+                myObjectHello(); // "Hi! My name is Rebecca"
+
+                // A function being attached to an object at runtime.
+                var sayHello = function() {
+                    console.log("Hi! My name is " + this.myName);
+                };
+                var myObject = {
+                    myName : "Rebecca"
+                };
+                var secondObject = {
+                    myName : "Colin"
+                };
+                myObject.sayHello = sayHello;
+                secondObject.sayHello = sayHello;
+                sayHello(); // "Hi! My name is the global object"
+                myObject.sayHello(); // "Hi! My name is Rebecca"
+                secondObject.sayHello(); // "Hi! My name is Colin"
+
+                var myNamespace = {
+                    myObject : {
+                        sayHello : function() {
+                            console.log("Hi! My name is " + this.myNamespaceName);
+                        },
+                        myNamespaceName : "Rebecca"
+                    }
+                };
+                var hello = myNamespace.myObject.sayHello;
+                hello(); // "Hi! My name is undefined"
+
+                var myNamespace = {
+                    myObject : {
+                        sayHello : function() {
+                            console.log("Hi! My name is " + this.myNamespaceName);
+                        },
+                        myNamespaceName : "Rebecca"
+                    }
+                };
+                var obj = myNamespace.myObject;
+                obj.sayHello(); // "Hi! My name is Rebecca"
+
+                x = 10;
+                function myFunc() {
+                    var x = 5;
+                }
+                console.log(x);
+                console.log(window.x);
+
+                // that function can see changes to the variable's value after the function is defined.
+                (function() {
+                    var baz = 1;
+                    var bim = function() {
+                        console.log(baz);
+                    };
+                    bar = function() {
+                        console.log(baz);
+                    };
+                })();
+                bar(); //  1
+                // baz is not defined outside of the function
+                // console.log(baz);
+                // bim(); // ReferenceError: bim is not defined
+
+                // Each function executed within the loop will reference
+                // the last value stored in i (5).
+                // This won't behave as we want it to - every 100 milliseconds, 5 will alert
+                for (var i = 0; i < 2; i++) {
+                    setTimeout(function() {
+                        console.log(i);
+                    }, i * 100);
+                }
+
+                // Using a closure to create a new private scope
+                // fix: “close” the value of i inside createFunction, so it won't change
+                var createFunction = function(i) {
+                    return function() {
+                        console.log(i);
+                    };
+                };
+                for (var i = 0; i < 2; i++) {
+                    setTimeout(createFunction(i), i * 100);
+                }
+
+                // Using a closure to access inner and outer object instances simultaneously.
+                var outerObj = {
+                    myName : "outer",
+                    outerFunction : function() {
+                        // Provide a reference to outerObj through innerFunction's closure
+                        var self = this;
+                        var innerObj = {
+                            myName : "inner",
+                            innerFunction : function() {
+                                console.log(self.myName, this.myName); // "outer inner"
+                            }
+                        };
+
+                        console.log(".innerFunction");
+                        innerObj.innerFunction();
+                        console.log(this.myName); // "outer"
+                    }
+                };
+                console.log(".outerFunction");
+                outerObj.outerFunction();
+
+                // Let's manipulate "this" with a basic example.
+                user = "johnsmith";
+                var module = {
+                    getUser : function() {
+                        return this.user;
+                    },
+                    user : "janedoe"
+                };
+                // module.getUser() is called where "module" is "this"
+                // and "module.user" is returned.
+                // janedoe
+                var usr = module.getUser();
+                console.log(usr);
+                // let's now store a reference in the global version of "this"
+                var getUser = module.getUser;
+                // getUser() called, "this" is global, "user" is returned
+                // johnsmith
+                usr = getUser();
+                console.log(usr);
+                // store a ref with "module" bound as "this"
+                var boundGetUser = getUser.bind(module);
+                // boundGetUser() called, "module" is "this" again, "module.user" returned.
+                // janedoe
+                usr = boundGetUser();
+                console.log(usr);
+            }
+
+            // Get a handle on the first button element in the document.
+            var button = document.querySelector("button");
+            // If a user clicks on it, say hello!
+            button.addEventListener("click", function(ev) {
+                alert("Hello");
+            }, false);
+        </script>
+</body>
+</html>
+
