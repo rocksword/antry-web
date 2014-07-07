@@ -5,9 +5,10 @@
 <title>Demo</title>
 </head>
 <body>
-  <iframe src="http://www.test.com"></iframe>
+  <iframe src=""></iframe>
   <a href="http://jquery.com/">jQuery</a>
-
+  <p id="target">test para</p>
+  <h1>h1 test</h1>
   <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
   <script>
             $(window).load(function() {
@@ -20,6 +21,22 @@
             // A $( document ).ready() block.
             $(document).ready(function() {
                 console.log("(document) ready");
+
+                var target = document.getElementById("target");
+                console.log("target: " + target);
+                target.innerHTML = "<td>Hello <b>World</b>!</td>";
+
+                // Setting the inner HTML with jQuery.
+                var target = document.getElementById("target");
+                $(target).html("<td>Hello <b>World 2</b>!</td>");
+
+                // Selecting all <h1> tags.
+                var headings = $("h1");
+                console.log("h1: " + headings);
+
+                // Viewing the number of <h1> tags on the page.
+                var allHeadings = $("h1");
+                console.log("allHeadings.length: " + allHeadings.length);
             });
 
             // Passing a named function instead of an anonymous function.
