@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://cdn.bootcss.com/dojo/1.8.1/dojo.min.js" data-dojo-config="async: true"></script>
+<script>
+    require([ "dojo/dom-construct", "dojo/dom", "dojo/on", "dojo/domReady!" ], function(domConstruct, dom, on) {
+        on(dom.byId("button1"), "click", function() {
+            var row = domConstruct.toDom("<tr><td>bar</td><td>Bar is also good</td></tr>");
+            domConstruct.place(row, "example");
+        });
+    });
+</script>
+</head>
+<body class="claro">
+  <button id="button1" type="button">Add a row</button>
+  <table>
+    <thead>
+      <tr>
+        <th>Example</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody id="example">
+      <tr>
+        <td>foo</td>
+        <td>Foo is good</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
